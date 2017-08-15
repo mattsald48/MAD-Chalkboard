@@ -1,0 +1,55 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #fff;
+}
+#signBox {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+#signBox>h2 {
+  margin-bottom: 10px;
+}
+
+#signBox .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+#signBox .form-control:focus {
+  z-index: 2;
+}
+#signBox input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#signBox input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn {
+  width: 48%;
+  cursor: pointer;
+}
+#quickstart-sign-in{
+  float: right;
+}
+#quickstart-sign-up{
+  float: left;
+}
+.bg-coral{
+  background: #ff5e62;
+  color: whitesmoke;
+}
+.bg-coral:hover{
+  color: #fff;
+  background: #e45559;
+  border-color: #e45559;
+}
+    

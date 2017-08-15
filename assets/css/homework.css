@@ -1,0 +1,40 @@
+.bg-coral{
+	background: #ff5e62;
+	color: whitesmoke;
+}
+.bg-coral .card-subtitle {
+	color: lightgreen;
+}
+#inputFileDiv {
+	position: relative;
+	height: 100%;
+}
+#uploadFileBtn {
+	width: 200px;
+	height: 100%;
+}
+#file {
+	position: relative;
+	text-align: right;
+	-moz-opacity: 0;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+}
+#uploadFileBtn {
+	position: absolute;
+	z-index: 1;
+}
+@media screen and (max-width: 575px){
+	#inputFileDiv {
+		min-height: 99px;
+	}
+	#uploadFileBtn {
+		width: 100%;
+	}
+	div.col-12{
+		margin-bottom: 2rem;
+	}
+}

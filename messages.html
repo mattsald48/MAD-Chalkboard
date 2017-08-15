@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Messages</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/messages.css">
+</head>
+<body>
+  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-coral">
+    <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="home.html">ChalkBoard</a>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="settings.html">Settings</a>
+        </li>
+      </ul>
+      <button id="signOut" class="btn btn-outline-danger my-2 my-sm-0" type="button">SignOut</button>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+        <div class="mb-3 mx-2">
+          <img id="profileImage" class="rounded img-fluid">
+        </div>
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="messages.html">Messages<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="roster.html">Roster</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="homework.html">Homework</a>
+          </li>
+        </ul>
+      </nav>
+      <!--Nav that shows up on small devices -->
+      <header class="col-12 hidden-sm-up bg-coral">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="roster.html">Roster</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="homework.html">Homework</a>
+          </li>
+        </ul>
+      </header>
+      <!--Main Content-->
+      <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+        <h1>Messages</h1>
+        <div class="row mb-4">
+          <!-- Button that shows the selection area -->
+          <div class="col-12 col-sm-6 col-md-6">
+            <div id="messageCard" class="card bg-coral">
+              <div class="card-block">
+                <h4 class="card-title">Compose</h4>
+                <h6 class="card-subtitle mb-2">new message</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6">
+            <div id="sentCard" class="card bg-coral">
+              <div class="card-block">
+                <h4 class="card-title">View</h4>
+                <h6 class="card-subtitle mb-2">sent messages</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- selection area -->
+        <div id="formMessage" data-show="hidden">
+         <form>
+            <div class="form-group">
+              <label for="studentSelect1" class="col-form-label" >Select a recipient</label>
+              <select class="form-control" id="studentSelect1">
+                <!-- <options which have the students are generated here -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="subjectLine" class="col-form-label">Subject</label>
+                <input class="form-control" type="text" placeholder="Subject" id="subjectLine">
+            </div>
+            <div class="form-group">
+              <label for="submitTextArea">Message</label>
+              <textarea class="form-control" id="submitTextArea" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn bg-coral" id="button">Submit</button>
+          </form>
+        </div>
+        <!-- Sent Messages section -->
+        <div id="messageHolder" data-show="hidden">  <!--this was missing -->
+          <h4>Sent Messages</h4>
+            <div id="formSent" data-show="hidden">
+             <form>
+                <div class="form-group">
+                   <div class="form-group">
+                      <label for="studentSelectSent">Select A Student To Review Sent Messages</label>
+                      <select class="form-control" id="studentSelectSent">
+                        <!-- <options which have the students are generated here -->
+                        <option>All Messages</option>
+                      </select>
+                   </div>
+                    <button type="submit" class="btn bg-coral" id="buttonSent">Submit</button>
+                </div>
+              </form>
+            </div> 
+            <div id="sentMessages"></div> 
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+  <script src="assets/javascript/main.js"></script>
+  <script src="assets/javascript/messages.js"></script>
+  <script src="assets/javascript/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
